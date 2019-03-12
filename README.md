@@ -18,6 +18,13 @@ You can also utilise your current location by clicking on the location icon to t
 
 	I looked for a nicer way than including the client library Google provides but [there doesn't appear to be one that will play nicely with Angular](https://github.com/angular/angular-cli/issues/6389). The cleanest alternative I could find was adding some middleware to handle the query for me. It also meant I didn't have to worry about securing the Google API key on client.
 
+	#### What I would change
+	I'm not particularly happy with the UI. Although functional it could be much more user friendly (it's not obvious you can use the location icon at the left of the input box to automatically fill in your coordinates). Also, as someone who likes his UI to actually look pretty, I would have liked to spend some time making it generally look nicer. The background is just there to give it some kind of theme but I was more concerned with getting a working prototype working with the limited amount of time I could actually spend on this.
+
+	There are also some gaps with the error handling. Again, with more time these could be resolved. For example; there is no error 400/500 handling for the API request, so if an error does occur, it does so silently with no user feedback (apart from auto-generated error messages in the console). With more time I would refactor how I have written those event chains to add some way of giving the user feedback when something goes wrong.
+
+	Additionally, although not too important, is the use of default JavaScript alerts. These aren't pretty and given more time I would have integrated them into the UI to make the experience less jarring and more integrated to keep user focus on the search bar.
+
 2. Can you describe a feature (perhaps with some reference code) that exists in your chosen programming language that you found particularly useful?
 
 	I find using the observable pattern very useful for easily separating the concerns of service and components which utilise those services.
@@ -43,11 +50,3 @@ You can also utilise your current location by clicking on the location icon to t
 	Alternatively, if this question refers to general code performance issues like choosing to use a JavaScript `.map` function instead of a `for` loop, then this would usually be a personal preference of the developer. Normally this wouldn't be an issue but with extremely large iterable objects/arrays, switching to a `for` loop could have a small improvement in processing time.
 
 	I guess this question could also refer to inefficient/short sighted algorithmic choices by the developer. Even though it's not my area of expertise, an example could be a system that has small data sets that require sorting via a sorting algorithm but the system has the potential for those data sets to become much larger. In this case, to future proof the system, execution time for larger datasets could be improved by replacing an Insertion sort (which is faster on smaller datasets) with a Quicksort (which is faster - and a better efficiency tradeoff - with larger datasets).
-
-4. What I'd do differently
-
-	I'm not particularly happy with the UI. Although functional it could be much more user friendly (it's not obvious you can use the location icon at the left of the input box to automatically fill in your coordinates). Also, as someone who likes his UI to actually look pretty, I would have liked to spend some time making it generally look nicer. The background is just there to give it some kind of theme but I was more concerned with getting a working prototype working with the limited amount of time I could actually spend on this.
-
-	There are also some gaps with the error handling. Again, with more time these could be resolved. For example; there is no error 400/500 handling for the API request, so if an error does occur, it does so silently with no user feedback (apart from auto-generated error messages in the console). With more time I would refactor how I have written those event chains to add some way of giving the user feedback when something goes wrong.
-
-	Additionally, although not too important, is the use of default JavaScript alerts. These aren't pretty and given more time I would have integrated them into the UI to make the experience less jarring and more integrated to keep user focus on the search bar.
