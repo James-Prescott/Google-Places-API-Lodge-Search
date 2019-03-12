@@ -1,0 +1,11 @@
+<div [className]=' "search-box__wrapper"'>
+	<label class='search-box__label'>Lodge Search</label>
+	<input class='search-box__input' 
+		placeholder='Latitude, Longitude'
+		[(ngModel)]='value' />
+	<button class='search-box__button' 
+		(click)='searchClick()'>
+		{{ requestingData ? 'Loading...' : 'Search' }}
+	</button>
+	<i class="fas fa-map-marker-alt search-box__location-icon" (click)='locationClick()'></i>
+</div>

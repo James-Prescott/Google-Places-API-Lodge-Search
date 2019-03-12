@@ -1,0 +1,12 @@
+<div [className]='hidden ? "dropdown__wrapper--hidden" : "dropdown__wrapper"'>
+	<div class="dropdown__item">
+		<p class="dropdown__name caption">Lodge Name</p>
+		<p class="dropdown__openingDetails caption">Open/Closed</p>
+		<p class="dropdown__rating caption">Lodge Rating</p>
+	</div>
+	<div class="dropdown__item" *ngFor='let lodge of dropdownItems'>
+		<p class="dropdown__name">Lodge Name: {{ lodge.name }}</p>
+		<p class="dropdown__openingDetails">It is currently {{ lodge.openingHours && lodge.openingHours.open_now ? 'open' : 'closed' }}</p>
+		<p class="dropdown__rating">{{ lodge.rating }}/5</p>
+	</div>
+</div>

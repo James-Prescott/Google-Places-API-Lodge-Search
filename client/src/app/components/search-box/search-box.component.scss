@@ -1,0 +1,91 @@
+@import '_colors';
+@import '_fonts';
+
+:host {
+	align-self: middle;
+
+	.search-box__wrapper {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+	.search-box__label {
+		font-family: $baseFont;
+		font-size: 0.75em;
+		color: $baseFontColor;
+		margin: 0 auto;
+		grid-row: 1;
+	}
+	.search-box__input {
+		font-family: $baseFont;
+		color: $brandColor;
+		font-size: 1.2em;
+		padding: 10px 10px 10px 25px;
+		border: 2px solid $brandColor;
+		border-radius: 2px 0 0 2px;
+		text-align: center;
+		grid-row: 2;
+		margin-bottom: 5px;
+
+		:focus {
+			border:  2px solid $brandColor;
+			box-shadow: none;
+		}
+	}
+	.search-box__button {
+		background-color: $brandColor;
+		color: $backgroundColor;
+		cursor: pointer;
+		border: none;
+		padding: 10px 10px;
+		font-size: 1.2em;
+		font-family: $baseFont;
+		grid-row: 3;
+		border-radius: 0 2px 2px 0;
+	}
+	.search-box__location-icon {
+		position: absolute;
+		margin-top: 37px;
+		margin-left: 15px;
+		cursor: pointer;
+	}
+
+	// Desktop specific styling
+	@media only screen and (min-width: 600px) {
+		.search-box__wrapper {
+			display: grid;
+			grid-template-columns: 10fr 2fr;
+		}
+
+		.search-box__label {
+			font-family: $baseFont;
+			font-size: 0.75em;
+			color: $baseFontColor;
+			margin: 0 10px;
+			grid-row: 1;
+		}
+
+		.search-box__input {
+			font-family: $baseFont;
+			color: $brandColor;
+			font-size: 1.2em;
+			padding: 10px 10px;
+			border-left: 2px solid $brandColor;
+			border-top: 2px solid $brandColor;
+			border-bottom: 2px solid $brandColor;
+			border-right: none;
+			border-radius: 2px 0 0 2px;
+			text-align: center;
+			grid-row: 2;
+			margin-bottom: 0;
+	
+			:focus {
+				border:  2px solid $brandColor;
+				box-shadow: none;
+			}
+		}
+
+		.search-box__button {
+			grid-row: 2;
+		}
+	}
+}

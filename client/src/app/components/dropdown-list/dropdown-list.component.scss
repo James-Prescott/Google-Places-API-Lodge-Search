@@ -1,0 +1,37 @@
+@import '_colors';
+@import '_fonts';
+
+.dropdown__wrapper {
+	width: 100vw;
+}
+.dropdown__wrapper--hidden {
+	display: none;
+}
+.caption {
+	font-size: 1.3em;
+}
+.dropdown__item {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	font-family: $baseFont;
+	color: $invertedFontColor;
+	background-color: rgba(255, 255, 255, 0.6);
+	margin-top: 2px;
+	align-items: center;
+    justify-items: center;
+}
+.dropdown-captions--hidden {
+	display: none;
+}
+.dropdown__name {
+	font-family: $baseFont;
+	color: $baseFontColor;
+}
+.dropdown__openingDetails {
+	font-family: $baseFont;
+	color: $baseFontColor;
+}
+.dropdown__rating {
+	font-family: $baseFont;
+	color: $baseFontColor;
+}
